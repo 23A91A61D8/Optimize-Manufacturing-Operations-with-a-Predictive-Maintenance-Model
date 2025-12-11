@@ -71,6 +71,7 @@
   - High **recall** → safety-critical systems  
   - High **precision** → reduce false alarms
 
+<img width="1067" height="145" alt="Screenshot 2025-12-11 194656" src="https://github.com/user-attachments/assets/4e3b7c38-a34f-4d48-ba22-d88dff8328a0" />
 <img width="508" height="523" alt="image" src="https://github.com/user-attachments/assets/019d9cd5-8c1c-4c28-b100-ac6dab1e9b68" />
 <img width="411" height="523" alt="image" src="https://github.com/user-attachments/assets/2625804e-827c-408a-a34e-43a69a475123" />
 <img width="465" height="455" alt="image" src="https://github.com/user-attachments/assets/64c94ed7-783a-4b0f-9c4a-6da3e18a0273" />
@@ -84,37 +85,63 @@
 <img width="689" height="362" alt="image" src="https://github.com/user-attachments/assets/cf977c11-7902-47f7-a653-9497dad92b20" />
 <img width="916" height="957" alt="image" src="https://github.com/user-attachments/assets/d29ab5c6-adf4-4ec9-b584-2fbc0599e9c7" />
 
-4. Dashboard Development
+## 4. Dashboard Development
 
-The dashboard should be designed with real end-users in mind, typically maintenance engineers who monitor machine health.
+- The dashboard should be designed with **real end-users in mind**, especially maintenance engineers who monitor equipment conditions.
 
-Main dashboard must include:
+- **Main dashboard should include:**
+  - Total machine count  
+  - Failure count  
+  - Failure rate (%)
+  - List of high-risk machines  
+  - Machine selector (dropdown menu)
 
-Total machine count, failure count, and failure rate
+- **For each selected machine, display:**
+  - Historical sensor readings with failure event markers  
+  - Predicted failure risk score (numeric value or gauge indicator)  
+  - SHAP-based explanation of the top contributing factors  
 
-High-risk machine list highlighting machines with elevated predicted failure risk
+- **Include interactive features such as:**
+  - Zoomable sensor charts  
+  - Hover tooltips to inspect values  
+  - Dynamic risk trend plots  
 
-Machine selector (dropdown) to inspect individual machine performance
+- Ensure that the UI is **clear, responsive**, and helps users quickly identify **machines that are at risk**, enabling faster decision-making.
 
-For each selected machine, display:
+<img width="798" height="885" alt="image" src="https://github.com/user-attachments/assets/fc14377b-0a10-435d-92ab-38c3078cb4c0" />
+<img width="833" height="1193" alt="image" src="https://github.com/user-attachments/assets/f8daec94-f573-4e77-b962-9304b630474b" />
+<img width="781" height="801" alt="image" src="https://github.com/user-attachments/assets/9469468c-230e-4ed2-b315-07a3e1a8e5d0" />
 
-Historical sensor readings with failure event markers
+## 5. Project Structure & Reproducibility
 
-Predicted risk score (either a numeric score or a visual gauge indicator)
+- **Organize the project clearly to ensure repeatability:**
+  - Separate directories for raw data, processed data, notebooks, scripts, and dashboards.
 
-SHAP-based feature explanations to show which variables contributed to the prediction
+- **Maintain a `requirements.txt` file to fix library versions.**
 
-Interactive components should include:
+- **Use consistent random seeds for reproducibility in all notebooks and model scripts.**
 
-Zoomable sensor charts for detailed inspection
+- **Maintain a clear folder for experiment logs, evaluation metrics, and model artifacts.**
 
-Hover tooltips to reveal exact sensor values
+- **Export the final trained model and ensure the dashboard loads it correctly each time.**
 
-Dynamic risk trend plots showing how predicted risk evolves over time
+<img width="486" height="1168" alt="image" src="https://github.com/user-attachments/assets/c76ddd56-8765-44c9-a5ea-c206cb9ca51b" />
+<img width="360" height="1167" alt="image" src="https://github.com/user-attachments/assets/fb3e5fd9-5ff4-41d1-95f5-973b737cc754" />
 
-Ensure the UI is clean, responsive, and helps engineers quickly identify at-risk machines to take necessary preventive actions.
+## Random Seed Initialization
 
+- To ensure that all experiments in the project produce consistent and repeatable results, random seeds are initialized at the beginning of the workflow.
 
+- Machine learning pipelines rely on randomness in several stages:
+  - Train/validation splitting
+  - Model weight initialization
+  - Feature shuffling
+  - Sampling
+  - Any NumPy or Python-based random operations
+
+- If the random seed is not fixed, you will get different results every time, which makes debugging and comparing models impossible.
+## Code Used for Random Seed Initialization
+<img width="940" height="258" alt="image" src="https://github.com/user-attachments/assets/5e1486d0-b604-496d-8d84-043c8303222f" />
 
 
 
