@@ -1,12 +1,12 @@
 # Optimize-Manufacturing-Operations-with-a-Predictive-Maintenance-Model
-1. Data Exploration & Validation Strategy
-•	Plot all sensor readings (temperature, vibration, pressure, current, etc.) over time and overlay known failure events.
-o	This helps visually identify patterns, anomalies, and pre-failure trends.
-•	Check for missing timestamps, duplicates, sudden jumps, or sensor drift.
-•	Study the temporal behavior of machines (daily patterns, shift-wise variations, seasonal effects).
-•	Use a time-aware validation strategy — traditional k-fold must not be used.
-o	Apply TimeSeriesSplit, rolling-forward validation, or expanding-window validation to simulate real-world model deployment.
-•	Ensure that validation data always occurs later in time than training data to prevent data leakage.
+#1. Data Exploration & Validation Strategy
+#•	Plot all sensor readings (temperature, vibration, pressure, current, etc.) over time and overlay known failure events.
+#o	This helps visually identify patterns, anomalies, and pre-failure trends.
+#•	Check for missing timestamps, duplicates, sudden jumps, or sensor drift.
+#•	Study the temporal behavior of machines (daily patterns, shift-wise variations, seasonal effects).
+#•	Use a time-aware validation strategy — traditional k-fold must not be used.
+#o	Apply TimeSeriesSplit, rolling-forward validation, or expanding-window validation to simulate real-world model deployment.
+#•	Ensure that validation data always occurs later in time than training data to prevent data leakage.
 <img width="881" height="313" alt="image" src="https://github.com/user-attachments/assets/97701f2d-27a0-4fd0-8447-4138959b5576" />
 <img width="935" height="492" alt="image" src="https://github.com/user-attachments/assets/6bb2f2c0-94d8-40cf-8146-2f081238b15f" />
 
@@ -41,7 +41,8 @@ o	F1-score
 o	PR-AUC (Precision–Recall AUC)
 •	Avoid accuracy as it gives misleading results for imbalanced problems.
 •	Tune decision thresholds for your operational needs (high recall for safety, high precision for reducing false alarms).
-<img width="508" height="523" alt="image" src="https://github.com/user-attachments/assets/019d9cd5-8c1c-4c28-b100-ac6dab1e9b68" />     <img width="411" height="523" alt="image" src="https://github.com/user-attachments/assets/2625804e-827c-408a-a34e-43a69a475123" />
+<img width="508" height="523" alt="image" src="https://github.com/user-attachments/assets/019d9cd5-8c1c-4c28-b100-ac6dab1e9b68" />
+<img width="411" height="523" alt="image" src="https://github.com/user-attachments/assets/2625804e-827c-408a-a34e-43a69a475123" />
 
 
 
