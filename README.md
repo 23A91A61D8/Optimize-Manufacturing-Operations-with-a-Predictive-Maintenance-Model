@@ -84,9 +84,35 @@
 <img width="689" height="362" alt="image" src="https://github.com/user-attachments/assets/cf977c11-7902-47f7-a653-9497dad92b20" />
 <img width="916" height="957" alt="image" src="https://github.com/user-attachments/assets/d29ab5c6-adf4-4ec9-b584-2fbc0599e9c7" />
 
+4. Dashboard Development
 
+The dashboard should be designed with real end-users in mind, typically maintenance engineers who monitor machine health.
 
+Main dashboard must include:
 
+Total machine count, failure count, and failure rate
+
+High-risk machine list highlighting machines with elevated predicted failure risk
+
+Machine selector (dropdown) to inspect individual machine performance
+
+For each selected machine, display:
+
+Historical sensor readings with failure event markers
+
+Predicted risk score (either a numeric score or a visual gauge indicator)
+
+SHAP-based feature explanations to show which variables contributed to the prediction
+
+Interactive components should include:
+
+Zoomable sensor charts for detailed inspection
+
+Hover tooltips to reveal exact sensor values
+
+Dynamic risk trend plots showing how predicted risk evolves over time
+
+Ensure the UI is clean, responsive, and helps engineers quickly identify at-risk machines to take necessary preventive actions.
 
 
 
